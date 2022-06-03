@@ -1,0 +1,1 @@
+Ini branch sebelum Daily Standup di hari jum'at
