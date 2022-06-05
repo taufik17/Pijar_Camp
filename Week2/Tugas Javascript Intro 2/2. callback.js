@@ -32,26 +32,36 @@ const callback = (keyword, panjang) => {
     })
 
     // fungsi callback mereturn nilai hasil yang di slice berdasarkan ukuran yang dikirim parameter
-    return console.log(hasil.slice(0, panjang))
+    return hasil.slice(0, panjang)
 }
 
 // fungsi searchName
 const searchName = (keyword, panjang, cari) => {
-    // validasi keyword harus string
-    if (typeof keyword === "string") {
-        // validasi panjang array harus number
-        if (typeof panjang === "number") {
-            // validasi cari harus merupakan fungsi
-            if (typeof cari === "function") {
-                cari(keyword, panjang)
+    // validasi parameter dikirim atau tidak
+    if (keyword, panjang, cari !== undefined) {
+        // validasi keyword harus string
+        if (typeof keyword === "string") {
+            // validasi panjang array harus number
+            if (typeof panjang === "number") {
+                // validasi panjang array >= 1
+                if (panjang >= 1) { // karena 0.1 masih menghasilkan []
+                    // validasi cari harus merupakan fungsi
+                    if (typeof cari === "function") {
+                        console.log(cari(keyword, panjang))
+                    } else {
+                        console.log("Parameter 3 harus fungsi callback")
+                    }
+                } else {
+                    console.log("Parameter 2 / panjang array harus >= 1")
+                }
             } else {
-                console.log("Parameter 3 harus fungsi callback")
+                console.log("Parameter 2 / panjang array harus number")
             }
         } else {
-            console.log("Parameter 2 / panjang array harus number")
+            console.log("Parameter 1 / keyword harus string")
         }
     } else {
-        console.log("Parameter 1 / keyword harus string")
+        console.log("Parameter yang dikirim tidak lengkap, lihat: searchName(string, number, functionCallback)")
     }
 }
 
