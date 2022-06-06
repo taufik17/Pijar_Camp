@@ -97,56 +97,70 @@ let trimText = '  PijarCamp '
 console.log("Nomor 16: ")
 console.log(trimText)
 console.log(trimText.trim())
-// Method yang berfungsi untuk menghapus spasi pada awal dan akhir string
+// => Method yang berfungsi untuk menghapus spasi pada awal dan akhir string
 
 // 17. toString
 let int = 5
 console.log("Nomor 17: ")
 console.log("integer: ", int + 2)
 console.log("String: ", int.toString() + 2)
+// => Method yang berfungsi untuk mengubah tipe data menjadi tipe data string
 
+console.log(" ")
+console.log(" ")
 
 // Built-in Array javascript
 // (kecuali : split, reverse, join, foreach, map)
 
 // 1. unshift
-var mahasiswa = ['Taufik', 'Kevin', 'Komarudin', 'Aldo']
+var mahasiswa = ['Taufik', 'Agus', 'Komarudin', 'Aldo']
 console.log("Data awal : ", mahasiswa)
-mahasiswa.unshift('Ayi')
+mahasiswa.unshift('Bagus')
 console.log("Setelah unshift() : ", mahasiswa)
+/* => Method yang berfungsi untuk menambahkan elemen baru pada sebuah array, 
+    elemen akan ditempatkan pada posisi awal (index 0)
+*/
 
 console.log(" ")
 
 // 2. shift
-var mahasiswa2 = ['kisana', 'Taufik', 'Kevin', 'Komarudin', 'Aldo']
+var mahasiswa2 = ['kisana', 'Taufik', 'Agus', 'Komarudin', 'Aldo']
 console.log("Data awal : ", mahasiswa2)
 mahasiswa2.shift('kisana')
 console.log("Setelah shift() : ", mahasiswa2)
+// => Method yang berfungsi untuk menghapus elemen pertama pada sebuah array
 
 console.log(" ")
 
 // 3. push
-var mahasiswa3 = ['Taufik', 'Kevin', 'Komarudin', 'Aldo']
+var mahasiswa3 = ['Taufik', 'Agus', 'Komarudin', 'Aldo']
 console.log("Data awal : ", mahasiswa3)
-mahasiswa3.push('Ayi')
+mahasiswa3.push('Bagus')
 console.log("Setelah push() : ", mahasiswa3)
+/* => Method yang berfungsi untuk menambahkan elemen baru pada sebuah array, 
+    elemen akan ditempatkan pada posisi akhir pada index
+*/
 
 console.log(" ")
 
 // 3. pop
-var mahasiswa4 = ['Taufik', 'Kevin', 'Komarudin', 'Aldo', 'kisana']
+var mahasiswa4 = ['Taufik', 'Agus', 'Komarudin', 'Aldo', 'kisana']
 console.log("Data awal : ", mahasiswa4)
-mahasiswa4.pop('Ayi')
+mahasiswa4.pop('Bagus')
 console.log("Setelah pop() : ", mahasiswa4)
+// => Method yang berfungsi untuk menghapus elemen array pada index yang terakhir
 
 console.log(" ")
 
 // 4. slice dan 5. splice
-var mahasiswa5 = ['Taufik', 'Kevin', 'Komarudin', 'Aldo', 'kisana']
+var mahasiswa5 = ['Taufik', 'Agus', 'Komarudin', 'Aldo', 'kisana']
 console.log("Data awal : ", mahasiswa5)
-console.log("Setelah slice() : ", mahasiswa5.slice(1, 2))
-console.log("Setelah splice() : ", mahasiswa5.splice(1, 2))
-
+console.log("Setelah slice() : ", mahasiswa5.slice(2))
+console.log("Setelah splice() : ", mahasiswa5.splice(2))
+console.log(mahasiswa5)
+/* => Method yang sama - sama berfungsi untuk memotong array, perbedaanya jika slice
+    tidak mempengaruhi nilai variabel, jika splice akan mempengaruhi nilainya.
+*/
 console.log(" ")
 
 // 6. some

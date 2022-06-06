@@ -41,21 +41,26 @@ const searchName = (keyword, panjang, cari) => {
     if (keyword, panjang, cari !== undefined) {
         // validasi keyword harus string
         if (typeof keyword === "string") {
-            // validasi panjang array harus number
-            if (typeof panjang === "number") {
-                // validasi panjang array >= 1
-                if (panjang >= 1) { // karena 0.1 masih menghasilkan []
-                    // validasi cari harus merupakan fungsi
-                    if (typeof cari === "function") {
-                        console.log(cari(keyword, panjang))
+            // validasi keyword yang kosong
+            if (keyword.length != 0) {
+                // validasi panjang array harus number
+                if (typeof panjang === "number") {
+                    // validasi panjang array >= 1
+                    if (panjang >= 1) { // karena 0.1 masih menghasilkan []
+                        // validasi cari harus merupakan fungsi
+                        if (typeof cari === "function") {
+                            console.log(cari(keyword, panjang))
+                        } else {
+                            console.log("Parameter 3 harus fungsi callback")
+                        }
                     } else {
-                        console.log("Parameter 3 harus fungsi callback")
+                        console.log("Parameter 2 / panjang array harus >= 1")
                     }
                 } else {
-                    console.log("Parameter 2 / panjang array harus >= 1")
+                    console.log("Parameter 2 / panjang array harus number")
                 }
             } else {
-                console.log("Parameter 2 / panjang array harus number")
+                console.log("Keyword tidak boleh kosong")
             }
         } else {
             console.log("Parameter 1 / keyword harus string")
@@ -66,3 +71,11 @@ const searchName = (keyword, panjang, cari) => {
 }
 
 searchName("an", 3, callback)
+
+// testCase
+searchName()
+searchName(true, 3, callback)
+searchName("", 3, callback)
+searchName("an", true, callback)
+searchName("an", -1, callback)
+searchName("an", 3, "callback")
