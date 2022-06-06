@@ -19,7 +19,7 @@ const callback = (keyword, panjang) => {
     // cari nama
     lowerName.find(element => {
         // get nama dalam element yang mengandung keyword dari parameter 
-        if (element.includes(keyword)) {
+        if (element.includes(keyword.toLowerCase())) {
             // hasil yang didapat akan diambil indeksnya, kemudian ditampung pada variabel hasilIndex
             hasilIndex.push(lowerName.indexOf(element))
         }
@@ -31,8 +31,14 @@ const callback = (keyword, panjang) => {
         hasil.push(name[element])
     })
 
-    // fungsi callback mereturn nilai hasil yang di slice berdasarkan ukuran yang dikirim parameter
-    return hasil.slice(0, panjang)
+    // cek hasil apakah terdapat nama yang dicari
+    if (hasil.length > 0) {
+        // fungsi callback mereturn nilai hasil yang di slice berdasarkan ukuran yang dikirim parameter
+        return hasil.slice(0, panjang)
+    } else {
+        return "Nama Tidak ditemukan"
+    }
+
 }
 
 // fungsi searchName
@@ -70,7 +76,7 @@ const searchName = (keyword, panjang, cari) => {
     }
 }
 
-searchName("an", 3, callback)
+searchName("AN", 3, callback)
 
 // testCase
 searchName()
