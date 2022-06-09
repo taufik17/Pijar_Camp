@@ -76,12 +76,12 @@ const searchName = (keyword, panjang, cari) => {
     }
 }
 
-searchName("AN", 3, callback)
+searchName("A", 2, callback)
 
 // testCase
-searchName()
-searchName(true, 3, callback)
-searchName("", 3, callback)
-searchName("an", true, callback)
-searchName("an", -1, callback)
-searchName("an", 3, "callback")
+// searchName()
+// searchName(true, 3, callback)
+// searchName("", 3, callback)
+// searchName("an", true, callback)
+// searchName("an", -1, callback)
+// searchName("an", 3, "callback")
