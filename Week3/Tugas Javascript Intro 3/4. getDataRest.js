@@ -18,7 +18,7 @@ async function getName() {
         if (response?.data?.length) {
             return response.data
         } else {
-            console.log("Tidak Ditemukan Data")
+            console.log("Tidak Ditemukan Data") // lempar error
         }
     } catch (error) {
         throw error

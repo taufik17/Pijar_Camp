@@ -3,8 +3,8 @@ const cekHariKerja = (day) => {
         setTimeout(() => {
             const dataDay = ['senin', 'selasa', 'rabu', 'kamis', 'jumat']
             try {
-                let cek = dataDay.find((item) => {
-                    return item === day
+                let cek = dataDay.find(item => {
+                    return item === day.toLowerCase()
                 })
                 if (cek) {
                     resolve(cek)
@@ -12,7 +12,7 @@ const cekHariKerja = (day) => {
                     reject(new Error(`Hari ${day} bukan hari kerja`))
                 }
             } catch (error) {
-                return error
+                reject(new Error(`Terdapat kesalahan pada parameter`))
             }
 
             // Try Catch
@@ -24,7 +24,7 @@ const cekHariKerja = (day) => {
     })
 }
 
-cekHariKerja("senin")
+cekHariKerja("Senin")
     .then(res => console.log(`${res} adalah hari kerja`))
     .catch(err => console.log(`${err}`))
 
@@ -32,8 +32,19 @@ cekHariKerja("minggu")
     .then(res => console.log(`${res} adalah hari kerja`))
     .catch(err => console.log(`${err}`))
 
+cekHariKerja(123)
+    .then(res => console.log(`${res} adalah hari kerja`))
+    .catch(err => console.log(`${err}`))
+
+cekHariKerja()
+    .then(res => console.log(`${res} adalah hari kerja`))
+    .catch(err => console.log(`${err}`))
+
+
 // Then Catch
 // .then() .catch() digunakan ketika pemanggilan fungsi pada sebuah proses asyncronous, penggunaanya ditujukan untuk menghandle proses asyncronous
 // yang ada pada fungsi yang dipanggil.
 // Blok then berfungsi menangkap nilai balikan resolve / blok try yang success
 // Blok catch berfungsi menangkap nilai balikan reject pada promise, dan juga error dari blok catch (pada proses try catch)
+
+// validasi lower

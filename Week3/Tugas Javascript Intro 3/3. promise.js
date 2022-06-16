@@ -1,4 +1,5 @@
 import { readFile as bacaFile } from 'fs';
+import axios from 'axios'
 
 const readFile = (file, encoding) => {
 
@@ -10,7 +11,7 @@ const readFile = (file, encoding) => {
                     return resolve(content)
                 })
             } catch (err) {
-                return err;
+                reject(err);
             }
         } else {
             console.log("Parameter yang dikirim harus lengkap")
@@ -31,7 +32,6 @@ readFile('nama.txt', 'utf-8')
         }
     })
 
-import axios from 'axios'
 
 const getData = (keyword) => {
     return new Promise(async (resolve, reject) => {
@@ -51,7 +51,7 @@ const getData = (keyword) => {
 };
 
 console.log("Mencari data");
-getData("hero")
+getData("boruto")
     .then((res) => {
         const filteredNames = res.data.map(element => {
             return element.attributes.titles.en_jp

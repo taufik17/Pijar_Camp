@@ -15,7 +15,7 @@ const getMonth = (callback) => {
         if (!error) {
             callback(null, month)
         } else {
-            callback(new Error("Sorry Data Not Found"), ['testing'])
+            callback(new Error("Sorry Data Not Found"), [])
         }
     }, 4000)
 }
