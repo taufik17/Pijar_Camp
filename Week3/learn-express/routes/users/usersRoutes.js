@@ -1,21 +1,10 @@
-const Router = require("express").Router
-const db = require('../db')
-
-// get users
-Router.get('/users', (req, res) => {
-    db.query(`SELECT * FROM users INNER JOIN detail ON detail.id_user = users.id ORDER BY users.id ASC`, (error, results) => {
-        if (error) {
-            res.status(400).send("ada yang error")
-        } else {
-            res.send({ data: results?.rows, jumlahData: results.rowCount })
-        }
-    })
-})
+const Router = require("express").Router()
+const db = require('../../db')
 
 // find users
-Router.get('/users/find', (req, res) => {
-    const { nama } = req.body
-    db.query(`SELECT * FROM users WHERE nama = $1`, [nama], (error, results) => {
+Router.get('/users/find/id', (req, res) => {
+    const { id } = req.body
+    db.query(`SELECT * FROM users WHERE id = $1`, [id], (error, results) => {
         if (error) {
             res.status(400).send("ada yang error")
         } else {
@@ -23,6 +12,7 @@ Router.get('/users/find', (req, res) => {
         }
     })
 })
+
 
 // add users
 Router.post('/users/add', (req, res) => {
