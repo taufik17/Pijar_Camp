@@ -9,25 +9,25 @@ const seleksiNilai = (nilaiAwal, nilaiAkhir, dataArray) => {
     }
     function search(nilai) {
         if (nilai.length === 0) {
-            console.log('Nilai tidak ditemukan');
+            console.log('Nilai tidak ditemukan')
         } else {
-            console.log(nilai.sort((a, b) => a - b));
+            console.log(nilai.sort((a, b) => a - b))
         }
     }
 
     if (validation) {
         if (nilaiAwal < nilaiAkhir && isDataTrue(dataArray)) {
-            const nilai = dataArray.filter((index) => index > nilaiAwal && index < nilaiAkhir && typeof index === 'number');
+            const nilai = dataArray.filter((index) => index > nilaiAwal && index < nilaiAkhir && typeof index === 'number')
             search(nilai);
         } else if (nilaiAwal > nilaiAkhir && isDataTrue(dataArray)) {
-            console.log('Nilai akhir harus lebih besar dari nilai awal');
+            console.log('Nilai akhir harus lebih besar dari nilai awal')
         } else if (nilaiAwal < nilaiAkhir && !isDataTrue(dataArray)) {
-            console.log('Jumlah angka dalam dataArray harus lebih dari 5');
+            console.log('Jumlah angka dalam dataArray harus lebih dari 5')
         } else {
-            console.log(`nilaiAwal harus lebih kecil dari nilaiAkhir & dataArray harus lebih dari 5`);
+            console.log(`nilaiAwal harus lebih kecil dari nilaiAkhir & dataArray harus lebih dari 5`)
         }
     } else {
-        console.log('Parameter yang dikirim salah, lihat: seleksiNilai(number, number, [array])');
+        console.log('Parameter yang dikirim salah, lihat: seleksiNilai(number, number, [array])')
     }
 };
 
