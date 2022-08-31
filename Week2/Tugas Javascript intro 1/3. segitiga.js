@@ -1,7 +1,3 @@
-function name(params) {
-
-}
-
 const funcPrint = (nilai) => {
     let hasil = '';
     if (typeof nilai !== 'number') {
@@ -22,6 +18,6 @@ const funcPrint = (nilai) => {
     console.log(hasil)
 }
 
-const printSegitiga = 4
+const printSegitiga = -4
 
 funcPrint(printSegitiga)
